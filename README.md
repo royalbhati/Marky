@@ -36,12 +36,12 @@ Containing the backend
 
 ![img-2](images/book3.png)
 
-## ToDO
+## Todo
 
-### Implement auth middleware for backend
+> Implement auth middleware for backend
 
-### Write test cases
+> Write test cases
 
-### Use styled components
+> Use styled components
 
-### Make it more optimised
+> Make it more optimised
