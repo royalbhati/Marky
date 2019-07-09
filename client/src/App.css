@@ -1,0 +1,154 @@
+@import '~antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+.largeAddButton {
+  text-align: center;
+  margin-top: 2rem;
+  margin-left:108px;
+}
+
+.buttons {
+  margin: 5px;
+}
+
+.cardBox {
+  /* margin: 2rem; */
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  /* Compensate for excess margin on outer gallery flex items */
+  /* margin: -1rem -1rem; */
+  /* align-items: space-between; */
+  /* align-content: space-between; */
+  justify-content: space-between;
+  
+}
+
+.cardBox2 {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.card {
+  flex: 1 0 24rem;
+  margin: 1rem;
+  box-shadow: 0 0 0.6rem 0rem rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+img {
+  height: 50px;
+  width: 30px;
+}
+
+.card-header-title,
+.card-header {
+  font-family: 'Ubuntu', sans-serif;
+  letter-spacing: 5px;
+  /* background-color: #FFF176; */
+  color: #37474F
+    /* font-family: 'Anton', sans-serif; */
+}
+
+@media only screen and (max-width:600px) {
+  .cardBox {
+    margin-top: 3rem;
+    display: grid;
+    grid-gap: 1.5rem;
+    /* align-items: space-between; */
+    /* align-content: space-between; */
+    justify-content: space-around
+  }
+
+  .logo {
+    margin-left: 2rem;
+
+  }
+
+  .logout {
+    margin-right: 0.8rem;
+  }
+}
+
+
+
+
+
+.logo {
+  font-size: 46px;
+  margin-left: 2rem;
+  /* padding: 5px 0; */
+  /* line-height: 1; */
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.hero.is-info {
+  background: linear-gradient(rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)), url('img/4.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.hero .nav,
+.hero.is-success .nav {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.hero .subtitle {
+  padding: 3rem 0;
+  line-height: 1.5;
+}
+
+.getStart {
+  font-size: 80px;
+}
+
+.hero.is-success {
+  background: #F2F6FA;
+}
+
+input {
+  font-weight: 300;
+}
+
+p {
+  font-weight: 700;
+}
+
+p.subtitle {
+  padding-top: 1rem;
+}
+
+.is-danger {
+  color: red;
+  font-size: 15px;
+}
+
+
+.urlIcon{
+  width: 40px;
+}
+.urlIcon > img {
+  width: 20px;
+  height: 20px;
+}
+
+.cardOuter{
+  width: 30%;
+  overflow: hidden;
+  
+}
+
+.demo-loadmore-list {
+  min-height: 200px;
+}
+.cardtitle{
+  display: flex;
+  justify-content: space-between;
+}
