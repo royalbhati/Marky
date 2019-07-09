@@ -24,8 +24,6 @@ const actions = {
     };
   },
   logout: (history, payload = {}) => {
-    console.log("logouttttttttttttt");
-
     return dispatch => {
       const Authentication = new Auth(history);
       const { logout } = Authentication;
