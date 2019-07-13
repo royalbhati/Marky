@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ReactModal from "react-modal";
-import axios from "axios";
-import jwtDecode from "jwt-decode";
+
 import actions from "../../store/Bookmarks/action";
 import { connect } from "react-redux";
 import loginActions from "../../store/Login/action";
@@ -40,7 +39,6 @@ class AddCat extends Component {
 
   handleCloseModal = () => {
     this.setState({ showModal: false });
-    window.location.reload();
   };
   onUrlChange = event => {
     this.setState({ url: event.target.value });
@@ -72,7 +70,6 @@ class AddCat extends Component {
   logout = () => {
     this.props.logo(this.props.history);
     this.props.isAuthenticated(this.props.history);
-    // window.location.redirect('/login')
   };
 
   render() {
@@ -86,7 +83,7 @@ class AddCat extends Component {
           </button>
           <button
             onClick={this.logout}
-            class='button is-danger is-medium is-outlined is-pulled-right logout'>
+            className='button is-danger is-medium is-outlined is-pulled-right logout'>
             Logout
           </button>
         </div>
@@ -96,25 +93,24 @@ class AddCat extends Component {
           contentLabel='Add category'
           style={customStyles}>
           <form onSubmit={this.onSubmit}>
-            <div class='field'>
-              <div class='control'>
-                <label class='label'>Enter the URL</label>
+            <div className='field'>
+              <div className='control'>
+                <label className='label'>Enter the URL</label>
                 <input
-                  class='input is-large'
+                  className='input is-large'
                   value={this.state.url}
                   onChange={this.onUrlChange}
                   type='text'
                   placeholder='http://www.google.com'
-                  autofocus=''
                 />
               </div>
             </div>
 
-            <div class='field'>
-              <div class='control'>
-                <label class='label'>Enter the Name</label>
+            <div className='field'>
+              <div className='control'>
+                <label className='label'>Enter the Name</label>
                 <input
-                  class='input is-large'
+                  className='input is-large'
                   value={this.state.name}
                   onChange={this.onNameChange}
                   type='text'
@@ -122,11 +118,11 @@ class AddCat extends Component {
                 />
               </div>
             </div>
-            <div class='field'>
-              <div class='control'>
-                <label class='label'>Enter the Category</label>
+            <div className='field'>
+              <div className='control'>
+                <label className='label'>Enter the Category</label>
                 <input
-                  class='input is-large'
+                  className='input is-large'
                   value={this.state.category}
                   onChange={this.onCatChange}
                   type='text'
@@ -137,14 +133,14 @@ class AddCat extends Component {
             <div className='is-flex buttons'>
               <input
                 type='Submit'
-                value='Save Bookmark'
+                onChange={() => {}}
+                value={"Save Bookmark"}
                 name='btn'
                 className='button is-block is-info is-medium is-halfwidth'
               />
               <button
                 onClick={this.handleCloseModal}
-                class='button is-block is-danger is-medium is-halfwidth'>
-                {" "}
+                className='button is-block is-danger is-medium is-halfwidth'>
                 &nbsp;&nbsp; Close&nbsp;&nbsp; &nbsp;
               </button>
             </div>

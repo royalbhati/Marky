@@ -43,4 +43,20 @@ router.get("/api/category/:token/:category", (req, res) => {
   );
 });
 
+router.get("/api/delete/single/:id", (req, res) => {
+  console.log("delete single",req.params.id);
+  
+  bookmark.findByIdAndDelete(
+    {
+      _id: req.params.id
+    },
+    (err, result) => {
+      if (err) {
+        throw new Error();
+      }
+      res.json({ result });
+    }
+  );
+});
+
 module.exports = router;

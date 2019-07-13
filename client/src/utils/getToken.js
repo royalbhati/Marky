@@ -2,7 +2,7 @@ import jwtDecode from 'jwt-decode'
 
 const getToken=()=>{
     if(localStorage.getItem("id_Token")){
-        return jwtDecode(localStorage.getItem("id_Token")).aud;
+        return jwtDecode(localStorage.getItem("id_Token")).at_hash;
     }
 }
 

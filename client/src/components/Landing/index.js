@@ -10,7 +10,6 @@ const mapDispatchToProps = dispatch => ({
 class Landing extends Component {
   login = () => {
     this.props.login();
-    // this.props.push("/");
   };
   render() {
     return (
@@ -27,20 +26,18 @@ class Landing extends Component {
                   <span
                     className='navbar-burger burger'
                     data-target='navbarMenu'>
-                    <span />
-                    <span />
-                    <span />
+                    
                   </span>
                 </div>
                 <div id='navbarMenu' className='navbar-menu'>
                   <div className='navbar-end'>
                     <span className='navbar-item'>
-                      <a className='button is-white is-outlined' href='#'>
+                      <span className='button is-white is-outlined'>
                         <span className='icon'>
                           <i className='fa fa-home' />
                         </span>
                         <span>Home</span>
-                      </a>
+                      </span>
                     </span>
 
                     <span className='navbar-item'>

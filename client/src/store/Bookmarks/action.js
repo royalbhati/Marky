@@ -4,12 +4,14 @@ import getToken from "../../utils/getToken";
 const NS = "BookMarks";
 
 export const actionTypes = {
-  FETCH_REQUEST: `${NS}/FETCH_REQUEST`,
-  FETCH_SUCCESS: `${NS}/FETCH_SUCCESS`,
-  ADD_SUCCESS: `${NS}/ADD_SUCCESS`,
-  DELETE: `${NS}/DELETE`,
-  DELETE_FAIL: `${NS}/DELETE_FAIL`
-};
+         FETCH_REQUEST: `${NS}/FETCH_REQUEST`,
+         FETCH_SUCCESS: `${NS}/FETCH_SUCCESS`,
+         ADD_SUCCESS: `${NS}/ADD_SUCCESS`,
+         DELETE: `${NS}/DELETE`,
+         DELETE_SINGLE: `${NS}/DELETE_SINGLE`,
+
+         DELETE_FAIL: `${NS}/DELETE_FAIL`
+       };
 
 const actions = {
   fetchBookmarks: (payload = {}) => {
@@ -32,6 +34,7 @@ const actions = {
           type: actionTypes.ADD_SUCCESS,
           payload: res.data
         });
+        dispatch(actions.fetchBookmarks());
         return true;
       });
     };
@@ -43,6 +46,26 @@ const actions = {
         .then(res => {
           dispatch({
             type: actionTypes.DELETE,
+            payload: res.data
+          });
+          dispatch(actions.fetchBookmarks());
+          return true;
+        })
+        .catch(err =>
+          dispatch({
+            type: actionTypes.DELETE_FAIL,
+            payload: err.data
+          })
+        );
+    };
+  },
+  deleteSingle: (id, payload = {}) => {
+    return dispatch => {
+      axios
+        .get(`/api/delete/single/${id}`)
+        .then(res => {
+          dispatch({
+            type: actionTypes.DELETE_SINGLE,
             payload: res.data
           });
           dispatch(actions.fetchBookmarks());

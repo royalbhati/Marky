@@ -58,7 +58,7 @@ export default class Auth {
     if (localStorage.getItem("id_Token")) {
       return {
         response: true,
-        token: jwtDecode(localStorage.getItem("id_Token")).aud
+        token: jwtDecode(localStorage.getItem("id_Token")).at_hash
       };
     } else {
       return { response: false, token: "" };

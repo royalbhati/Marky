@@ -22,12 +22,17 @@ const bookMarks = (state = getInitialState(), { type, payload }) => {
     case actionTypes.ADD_SUCCESS:
       return {
         ...state,
-        msg: payload
+        msg: "Added!"
       };
     case actionTypes.DELETE:
       return {
         ...state,
         msg: payload
+      };
+    case actionTypes.DELETE_SINGLE:
+      return {
+        ...state,
+        msg: "delwte single"
       };
     case actionTypes.DELETE_FAIL:
       return {

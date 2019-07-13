@@ -7,7 +7,6 @@ import "../../App.css";
 import Callback from "../Callback";
 import { connect } from "react-redux";
 import actions from "../../store/Login/action";
-import { message } from "antd";
 
 const mapStateToProps = state => ({
   isAuth: state.login.isAuth,
