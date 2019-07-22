@@ -33,15 +33,15 @@ class Dashboard extends Component {
       categories.push(element.category);
     });
 
-    const set_cat = new Set(categories);
+    const setCat = new Set(categories);
 
-    categories = Array.from(set_cat);
+    categories = Array.from(setCat);
 
     return categories.map((elem, i) => {
-      let new_cat = data.filter(element => {
+      let newCat = data.filter(element => {
         return element.category === categories[i];
       });
-      return <Card key={i} data={new_cat} category={categories[i]} />;
+      return <Card key={i} data={newCat} category={categories[i]} />;
     });
   };
 

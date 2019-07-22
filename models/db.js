@@ -4,4 +4,4 @@ const url =
 mongoose
   .connect(url, { useNewUrlParser: true })
   .then(() => console.log("connected"))
-  .catch(() => console.log(err));
+  .catch(err => console.log(err));
